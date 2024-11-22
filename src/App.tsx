@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       <Navbar />
-      <Hero />
-      <Experience />
+      <Hero /> 
+      <Experience /> 
       <Projects />
       <Contact />
       <Footer />
