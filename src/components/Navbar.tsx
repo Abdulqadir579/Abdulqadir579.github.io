@@ -17,14 +17,15 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-black/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xl font-bold text-emerald-400"
+            className="text-xl font-bold glitch neon-text"
+            data-text="Abdul Qadir"
           >
             Abdul Qadir
           </motion.span>
@@ -40,7 +41,7 @@ export default function Navbar() {
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 transition-colors"
+                className="px-4 py-2 rounded-lg cyber-border text-[#00fff9] hover:bg-[#00fff9]/10 transition-colors"
               >
                 Resume
               </motion.a>
@@ -50,7 +51,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-gray-400 hover:text-white"
+              className="p-2 rounded-md text-[#00fff9] hover:bg-[#00fff9]/10"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -63,7 +64,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-gray-900/95 backdrop-blur-lg"
+          className="md:hidden bg-black/95 backdrop-blur-lg"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             <MobileNavLink href="#home" onClick={() => setIsOpen(false)}>Home</MobileNavLink>
@@ -73,7 +74,7 @@ export default function Navbar() {
             <a
               href="/Abdul-Qadir-Resume.pdf"
               download
-              className="block px-3 py-2 rounded-md text-base font-medium text-white bg-emerald-500 hover:bg-emerald-600 transition-colors"
+              className="block px-3 py-2 rounded-lg text-[#00fff9] hover:bg-[#00fff9]/10 transition-colors text-base font-medium"
             >
               Resume
             </a>
@@ -88,7 +89,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
   <motion.a
     href={href}
     whileHover={{ scale: 1.05 }}
-    className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+    className="text-[#00fff9] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
   >
     {children}
   </motion.a>
@@ -98,7 +99,7 @@ const MobileNavLink = ({ href, onClick, children }: { href: string; onClick: () 
   <a
     href={href}
     onClick={onClick}
-    className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+    className="block px-3 py-2 rounded-md text-base font-medium text-[#00fff9] hover:text-white hover:bg-[#00fff9]/10 transition-colors"
   >
     {children}
   </a>
